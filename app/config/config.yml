@@ -2,6 +2,7 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: services.yml }
+    - { resource: "@CoreBundle/Resources/config/services.yml" }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
@@ -36,6 +37,19 @@ framework:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
+    # variables global
+    globals:
+        META_ENCODAGE: utf-8
+        META_LANGAGE: fr
+        META_AUTHOR: mandalorien
+        META_COPYRIGHT: mandalorien
+        META_DESCRIPTION: Plateform de jeu , modulable à volonté.
+        META_KEYWORDS: Plateform,cms,Wargame
+        META_SUBJECT: Plateform de jeu
+        VERSION: 0.0.1
+        DATE_VERSION: 2016
+        NAME_SITE: XNOVA
+        CONTACT_WEBSITE: mandalorien.wootook@gmail.com
 
 # Doctrine Configuration
 doctrine:

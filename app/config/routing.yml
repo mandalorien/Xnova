@@ -1,3 +1,7 @@
+core:
+    resource: "@CoreBundle/Resources/config/routing.yml"
+    prefix:   /
+
 #on laisse pour l'exemple
 #app:
 #    resource: "@AppBundle/Controller/"
