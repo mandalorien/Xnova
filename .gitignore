@@ -14,3 +14,9 @@
 !var/SymfonyRequirements.php
 /vendor/
 /web/bundles/
+profiles_settings.xml
+misc.xml
+modules.xml
+vcs.xml
+workspace.xml
+Xnova.iml
