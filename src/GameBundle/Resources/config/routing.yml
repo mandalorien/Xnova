@@ -1,0 +1,3 @@
+game_homepage:
+    path:     /
+    defaults: { _controller: GameBundle:Default:index }
