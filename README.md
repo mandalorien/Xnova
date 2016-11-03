@@ -9,6 +9,24 @@ Xnova
 
 ###### Symfony
 - version 3.0.9
+- si vous clonez la version de Xnova n'oubliez pas d'effectuer la liste des commandes si dessous (MAJ fréquente)
+- - php composer.phar update
+
+###### Config parameters.xml
+
+> Incenteev\ParameterHandler\ScriptHandler::buildParameters
+Creating the "app/config/parameters.yml" file
+Some parameters are missing. Please provide them.
+database_host (127.0.0.1): localhost
+database_port (null):
+database_name (symfony): xnova (ou ce que vous voulez)
+database_user (root):
+database_password (null):
+mailer_transport (smtp):
+mailer_host (127.0.0.1):
+mailer_user (null):
+mailer_password (null):
+secret (ThisTokenIsNotSoSecretChangeIt): xnova_symfony
 
 ###### Information
 
