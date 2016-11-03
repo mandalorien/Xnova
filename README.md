@@ -6,6 +6,7 @@ Xnova
 - GameBundle (qui contiendra l'essentiel du jeu ).
 - PluginsBundle (qui contiendra les modules à ajouter exmple : Marchand , Paypal ).
 - BoardBundle (qui contiendra l'intégralité du forum ) .
+
 ###### Symfony
 - version 3.0.9
 
