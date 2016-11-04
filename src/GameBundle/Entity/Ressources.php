@@ -125,4 +125,3 @@ class Ressources
         return $this->tauxProduction;
     }
 }
-

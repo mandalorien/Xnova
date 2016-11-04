@@ -3,6 +3,8 @@
 namespace CoreBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 
 /**
  * Profil
@@ -35,13 +37,6 @@ class Profil
      */
 
     private $ipRegister;
-
-    /**
-     * @var array
-     *
-     * @ORM\Column(name="univer", type="array")
-     */
-    private $univer;
 
     /**
      * @var string
@@ -78,7 +73,23 @@ class Profil
      */
     private $updateDate;
 
-
+	/**
+	 * @var users
+     * @ORM\OneToOne(targetEntity="CoreBundle\Entity\Users", cascade={"persist"})
+     */
+    private $users;
+	
+    /**
+     * @var univers
+     * @ORM\OneToMany(targetEntity="GameBundle\Entity\Univers",mappedBy="profil")
+     */
+    private $univers;
+	
+	
+    public function __construct()
+    {
+        $this->univers = new ArrayCollection();
+    }
     /**
      * Get id
      *
@@ -137,29 +148,6 @@ class Profil
         return $this->ipRegister;
     }
 
-    /**
-     * Set univer
-     *
-     * @param array $univer
-     *
-     * @return Profil
-     */
-    public function setUniver($univer)
-    {
-        $this->univer = $univer;
-
-        return $this;
-    }
-
-    /**
-     * Get univer
-     *
-     * @return array
-     */
-    public function getUniver()
-    {
-        return $this->univer;
-    }
 
     /**
      * Set avatar
@@ -280,5 +268,62 @@ class Profil
     {
         return $this->updateDate;
     }
-}
 
+    /**
+     * Set users
+     *
+     * @param \CoreBundle\Entity\Users $users
+     *
+     * @return Profil
+     */
+    public function setUsers(\CoreBundle\Entity\Users $users = null)
+    {
+        $this->users = $users;
+
+        return $this;
+    }
+
+    /**
+     * Get users
+     *
+     * @return \CoreBundle\Entity\Users
+     */
+    public function getUsers()
+    {
+        return $this->users;
+    }
+
+    /**
+     * Add univer
+     *
+     * @param Univers $univer
+     *
+     * @return Profil
+     */
+    public function addUniver(Univers $univer)
+    {
+        $this->univers[] = $univer;
+
+        return $this;
+    }
+
+    /**
+     * Remove univer
+     *
+     * @param Univers $univer
+     */
+    public function removeUniver(Univers $univer)
+    {
+        $this->univers->removeElement($univer);
+    }
+
+    /**
+     * Get univers
+     *
+     * @return Collection
+     */
+    public function getUnivers()
+    {
+        return $this->univers;
+    }
+}

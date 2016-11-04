@@ -48,7 +48,12 @@ class Univers
      * @ORM\Column(name="vitesse_jeu", type="integer")
      */
     private $vitesseJeu;
-
+	
+    /**
+	 * @var profil
+     * @ORM\ManyToOne(targetEntity="CoreBundle\Entity\Profil",inversedBy="univers")
+     */
+    private $profil;
 
     /**
      * Get id
@@ -155,5 +160,28 @@ class Univers
     {
         return $this->vitesseJeu;
     }
-}
 
+    /**
+     * Set profil
+     *
+     * @param \CoreBundle\Entity\Profil $profil
+     *
+     * @return Univers
+     */
+    public function setProfil(\CoreBundle\Entity\Profil $profil = null)
+    {
+        $this->profil = $profil;
+
+        return $this;
+    }
+
+    /**
+     * Get profil
+     *
+     * @return \CoreBundle\Entity\Profil
+     */
+    public function getProfil()
+    {
+        return $this->profil;
+    }
+}

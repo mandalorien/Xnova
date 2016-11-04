@@ -156,4 +156,3 @@ class Users
         return $this->roles;
     }
 }
-
