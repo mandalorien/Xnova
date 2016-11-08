@@ -7,8 +7,8 @@ game:
     prefix:   /Game/
 
 core:
-    resource: "@CoreBundle/Resources/config/routing.yml"
-    prefix:   /
+    resource: "@CoreBundle/Controller/"
+    type:     annotation
 
 #on laisse pour l'exemple
 #app:
