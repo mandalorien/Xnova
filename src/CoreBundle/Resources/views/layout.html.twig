@@ -17,25 +17,51 @@
 			<meta content="never" name="Expires"/>
 			<meta content="Tous public" name="rating"/>
 			<meta content="{{META_SUBJECT}}" name="subject"/>
-			{% block stylesheets %}
-			  {# On charge le CSS de bootstrap depuis le site directement #}
-			  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-			{% endblock %}
+			{% stylesheets filter="cssrewrite"
+			"@CoreBundle/Resources/public/plugins/morris/morris.css"
+			"@CoreBundle/Resources/public/css/bootstrap.min.css"
+			"@CoreBundle/Resources/public/css/core.css"
+			"@CoreBundle/Resources/public/css/components.css"
+			"@CoreBundle/Resources/public/css/icons.css"
+			"@CoreBundle/Resources/public/css/pages.css"
+			"@CoreBundle/Resources/public/css/menu.css"
+			"@CoreBundle/Resources/public/css/responsive.css"
+			"@CoreBundle/Resources/public/plugins/datatables/jquery.dataTables.min.css"
+			"@CoreBundle/Resources/public/plugins/datatables/buttons.bootstrap.min.css"
+			"@CoreBundle/Resources/public/plugins/datatables/fixedHeader.bootstrap.min.css"
+			"@CoreBundle/Resources/public/plugins/datatables/responsive.bootstrap.min.css"
+			"@CoreBundle/Resources/public/plugins/datatables/scroller.bootstrap.min.css"
+			%}
+			<link rel="stylesheet" href="{{ asset_url }}"/>
+			{% endstylesheets %}
+			{% javascripts
+			"@CoreBundle/Resources/public/js/modernizr.min.js"
+			%}
+			<script src="{{ asset_url }}"></script>
+			{% endjavascripts %}
 	</head>
 	<body>
-	<div class="container">
-
-		<hr>
-
-		<footer>
-			<p>The sky's the limit © {{ 'now'|date('Y') }} and beyond.</p>
-		</footer>
-	</div>
-
-	{% block javascripts %}
-	{# Ajoutez ces lignes JavaScript si vous comptez vous servir des fonctionnalités du bootstrap Twitter #}
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	{% block content %}
 	{% endblock %}
+	<script>
+		var resizefunc = [];
+	</script>
+	<!-- jQuery  -->
+	{% javascripts
+		"@CoreBundle/Resources/public/js/jquery.min.js"
+		"@CoreBundle/Resources/public/js/bootstrap.min.js"
+		"@CoreBundle/Resources/public/js/detect.js"
+		"@CoreBundle/Resources/public/js/fastclick.js"
+		"@CoreBundle/Resources/public/js/jquery.slimscroll.js"
+		"@CoreBundle/Resources/public/js/jquery.blockUI.js"
+		"@CoreBundle/Resources/public/js/waves.js"
+		"@CoreBundle/Resources/public/js/wow.min.js"
+		"@CoreBundle/Resources/public/js/jquery.nicescroll.js"
+		"@CoreBundle/Resources/public/js/jquery.scrollTo.min.js"
+		"@CoreBundle/Resources/public/js/jquery.core.js"
+		"@CoreBundle/Resources/public/js/jquery.app.js"
+	%}
+	<script src="{{ asset_url }}"></script>
+	{% endjavascripts %}
 	</body>
 </html>
