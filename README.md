@@ -1,19 +1,26 @@
 Xnova
 =====
 ###### Projet
-4 bundles :
+> 4 bundles :
 - CoreBundle (qui contiendra les méthodes importante + le systéme de connexion ).
 - GameBundle (qui contiendra l'essentiel du jeu ).
 - PluginsBundle (qui contiendra les modules à ajouter exmple : Marchand , Paypal ).
 - BoardBundle (qui contiendra l'intégralité du forum ) .
 
 ###### Symfony
-- version 3.0.9
+- version 3.1.6
 - si vous clonez la version de Xnova n'oubliez pas d'effectuer la liste des commandes si dessous (MAJ fréquente)
+```DOS
 - - php composer.phar update
+- - php bin/console doctrine:database:create
+- - php bin/console doctrine:schema:update --dump-sql
+- - php bin/console doctrine:schema:update --force
+- - php bin/console assets:install
+```
 
 ###### Config parameters.xml
 
+```DOS
 > Incenteev\ParameterHandler\ScriptHandler::buildParameters
 Creating the "app/config/parameters.yml" file
 Some parameters are missing. Please provide them.
@@ -27,6 +34,7 @@ mailer_host (127.0.0.1):
 mailer_user (null):
 mailer_password (null):
 secret (ThisTokenIsNotSoSecretChangeIt): xnova_symfony
+```
 
 ###### Information
 
