@@ -1,7 +1,7 @@
 Xnova
 =====
 ###### Projet
-4 bundles :
+> 4 bundles :
 - CoreBundle (qui contiendra les méthodes importante + le systéme de connexion ).
 - GameBundle (qui contiendra l'essentiel du jeu ).
 - PluginsBundle (qui contiendra les modules à ajouter exmple : Marchand , Paypal ).
