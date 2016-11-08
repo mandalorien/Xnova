@@ -17,21 +17,21 @@
 			<meta content="never" name="Expires"/>
 			<meta content="Tous public" name="rating"/>
 			<meta content="{{META_SUBJECT}}" name="subject"/>
-			{% stylesheets filter="cssrewrite"
-			"@CoreBundle/Resources/public/plugins/morris/morris.css"
-			"@CoreBundle/Resources/public/css/bootstrap.min.css"
-			"@CoreBundle/Resources/public/css/core.css"
-			"@CoreBundle/Resources/public/css/components.css"
-			"@CoreBundle/Resources/public/css/icons.css"
-			"@CoreBundle/Resources/public/css/pages.css"
-			"@CoreBundle/Resources/public/css/menu.css"
-			"@CoreBundle/Resources/public/css/responsive.css"
-			"@CoreBundle/Resources/public/plugins/datatables/jquery.dataTables.min.css"
-			"@CoreBundle/Resources/public/plugins/datatables/buttons.bootstrap.min.css"
-			"@CoreBundle/Resources/public/plugins/datatables/fixedHeader.bootstrap.min.css"
-			"@CoreBundle/Resources/public/plugins/datatables/responsive.bootstrap.min.css"
-			"@CoreBundle/Resources/public/plugins/datatables/scroller.bootstrap.min.css"
-			%}
+		{% stylesheets filter="cssrewrite"
+			"bundles/core/plugins/morris/morris.css"
+			"bundles/core/css/bootstrap.min.css"
+			"bundles/core/css/core.css"
+			"bundles/core/css/components.css"
+			"bundles/core/css/icons.css"
+			"bundles/core/css/pages.css"
+			"bundles/core/css/menu.css"
+			"bundles/core/css/responsive.css"
+			"bundles/core/plugins/datatables/jquery.dataTables.min.css"
+			"bundles/core/plugins/datatables/buttons.bootstrap.min.css"
+			"bundles/core/plugins/datatables/fixedHeader.bootstrap.min.css"
+			"bundles/core/plugins/datatables/responsive.bootstrap.min.css"
+			"bundles/core/plugins/datatables/scroller.bootstrap.min.css"
+		%}
 			<link rel="stylesheet" href="{{ asset_url }}"/>
 			{% endstylesheets %}
 			{% javascripts
