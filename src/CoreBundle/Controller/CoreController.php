@@ -10,10 +10,28 @@ use Symfony\Component\HttpFoundation\Request;
 class CoreController extends Controller
 {
     /**
-     * @Route("/", name="login")
-     * @Template("CoreBundle:Core:index.html.twig")
+     * @Route("/login", name="login")
+     * @Template("CoreBundle:Core:login.html.twig")
      */
-    public function indexAction()
+    public function loginAction(Request $request)
+    {
+
+    }
+	
+	/**
+     * @Route("/lostpassword", name="lostpassword")
+     * @Template("CoreBundle:Core:lostpassword.html.twig")
+     */
+    public function lostPasswordAction(Request $request)
+    {
+		
+    }
+	
+	/**
+     * @Route("/register", name="register")
+     * @Template("CoreBundle:Core:register.html.twig")
+     */
+    public function registerAction(Request $request)
     {
 
     }
