@@ -18,6 +18,7 @@ class AppKernel extends Kernel
             new CoreBundle\CoreBundle(),
             new GameBundle\GameBundle(),
             new BoardBundle\BoardBundle(),
+            new Plugins\CoreBundle\PluginsCoreBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

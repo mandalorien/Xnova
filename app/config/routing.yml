@@ -1,3 +1,7 @@
+plugins_core:
+    resource: "@PluginsCoreBundle/Resources/config/routing.yml"
+    prefix:   /
+
 board:
     resource: "@BoardBundle/Resources/config/routing.yml"
     prefix:   /Board/
