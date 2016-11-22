@@ -1,0 +1,4 @@
+services:
+#    plugins_core.example:
+#        class: Plugins\CoreBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
