@@ -31,7 +31,8 @@
         "doctrine/doctrine-fixtures-bundle": "~2.3",
         "symfony/assetic-bundle": "^2.8",
         "twig/twig": "1.*",
-        "stof/doctrine-extensions-bundle": "^1.2.2"
+        "stof/doctrine-extensions-bundle": "^1.2.2",
+        "friendsofsymfony/user-bundle": "dev-master"
 
     },
     "require-dev": {
