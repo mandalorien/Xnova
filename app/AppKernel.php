@@ -18,8 +18,8 @@ class AppKernel extends Kernel
 			new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new CoreBundle\CoreBundle(),
             new GameBundle\GameBundle(),
-            new PluginsBundle\PluginsBundle(),
             new BoardBundle\BoardBundle(),
+            new Plugins\CoreBundle\PluginsCoreBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
