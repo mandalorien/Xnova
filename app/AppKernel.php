@@ -17,7 +17,6 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new CoreBundle\CoreBundle(),
             new GameBundle\GameBundle(),
-            new PluginsBundle\PluginsBundle(),
             new BoardBundle\BoardBundle(),
         ];
 
