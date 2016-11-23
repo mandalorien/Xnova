@@ -2,12 +2,14 @@
 
 namespace CoreBundle\Controller;
 
+use FOS\UserBundle\Controller\SecurityController as BaseController;
+use CoreBundle\Entity\Users;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security as Role;
 use Symfony\Component\HttpFoundation\Request;
 
-class CoreController extends Controller
+class CoreController  extends BaseController
 {
     /**
      * @Route("/login", name="login")

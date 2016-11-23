@@ -13,6 +13,10 @@ game:
 core:
     resource: "@CoreBundle/Controller/"
     type:     annotation
+    
+# app/config/routing.yml
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
 
 #on laisse pour l'exemple
 #app:
