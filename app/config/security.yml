@@ -1,7 +1,9 @@
 # app/config/security.yml
+# Installation FosUser: http://symfony.com/doc/current/bundles/FOSUserBundle/index.html
+# tuto FosUser : https://www.idci-consulting.fr/fr/article/fos-user-bundle
 security:
     encoders:
-        FOS\UserBundle\Model\UserInterface: bcrypt
+        FOS\UserBundle\Model\UserInterface: sha512
 
     role_hierarchy:
         ROLE_MODERATOR:    ROLE_USER
