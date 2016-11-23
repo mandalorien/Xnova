@@ -3,7 +3,7 @@
 # tuto FosUser : https://www.idci-consulting.fr/fr/article/fos-user-bundle
 security:
     encoders:
-        FOS\UserBundle\Model\UserInterface: sha512
+        CoreBundle\Entity\Users: sha512
 
     role_hierarchy:
         ROLE_MODERATOR:    ROLE_USER
@@ -12,20 +12,33 @@ security:
         ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
 
     providers:
+        main:
+            id: fos_user.user_provider.username
         fos_userbundle:
             id: fos_user.user_provider.username
 
     firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        main_login:
+            pattern:    ^/(connexion|enregistrement|validation|reinitialisation|confirmation|login_failure)
+            anonymous: true
         main:
-            pattern: ^/
+            pattern:   ^/
+            anonymous: false
+            provider:  main
             form_login:
-                provider: fos_userbundle
-                csrf_token_generator: security.csrf.token_manager
-                # if you are using Symfony < 2.8, use the following config instead:
-                # csrf_provider: form.csrf_provider
-
-            logout:       true
-            anonymous:    true
+                login_path: login
+                check_path: login_check
+                failure_path: login_failure
+            logout:
+                path:   fos_user_security_logout
+                target: /
+            remember_me:
+                secret:   '%secret%'
+                lifetime: 604800 # 1 week in seconds
+                path:     /
 
     access_control:
         - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }

@@ -1,40 +1,28 @@
 <?php
-
 namespace CoreBundle\Controller;
 
-use FOS\UserBundle\Controller\SecurityController as BaseController;
-use CoreBundle\Entity\Users;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security as Role;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 
-class CoreController  extends BaseController
+class CoreController extends Controller
 {
     /**
-     * @Route("/login", name="login")
-     * @Template("CoreBundle:Core:login.html.twig")
+     * @Template("CoreBundle:Core:index.html.twig")
+     * @Security("is_granted('IS_AUTHENTICATED_FULLY')")
+     * @Route("/", name="index")
      */
-    public function loginAction(Request $request)
+    public function indexAction(Request $request)
     {
-
-    }
-	
-	/**
-     * @Route("/lostpassword", name="lostpassword")
-     * @Template("CoreBundle:Core:lostpassword.html.twig")
-     */
-    public function lostPasswordAction(Request $request)
-    {
-		
-    }
-	
-	/**
-     * @Route("/register", name="register")
-     * @Template("CoreBundle:Core:register.html.twig")
-     */
-    public function registerAction(Request $request)
-    {
-
+		$user = $this->container->get('security.context')->getToken()->getUser();
+		var_dump($user);
+		$em = $this->getDoctrine()->getManager();
+        if($request->getSession()->get('connexion') === 'ok')
+        {
+            $this->addFlash('success', 'Connexion réussie');
+            $request->getSession()->set('connexion', 'nok');
+        }
     }
 }
