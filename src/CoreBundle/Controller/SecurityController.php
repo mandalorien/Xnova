@@ -41,7 +41,7 @@ class SecurityController  extends BaseController
     }
 
     /**
-     * @Template("CoreBundle:Connexion:register.html.twig")
+     * @Template("CoreBundle:Core:register.html.twig")
      * @Role("is_granted('IS_AUTHENTICATED_ANONYMOUSLY')")
      * @Route("/enregistrement", name="register")
      */

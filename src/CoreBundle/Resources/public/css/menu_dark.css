@@ -13,9 +13,10 @@ File: Menu
 }
 .topbar .topbar-left {
   background: #ffffff;
+  border-top: 3px solid #71b6f9;
   float: left;
   text-align: center;
-  height: 70px;
+  height: 73px;
   position: relative;
   width: 250px;
   z-index: 1;
@@ -24,11 +25,13 @@ File: Menu
   line-height: 70px;
 }
 .navbar-default {
-  background-color: #253138;
+  background-color: #ffffff;
   border-radius: 0px;
   border: none;
+  border-top: 3px solid #71b6f9;
   margin-bottom: 0px;
   padding: 0px 20px;
+  box-shadow: 0 0px 24px 0 rgba(0, 0, 0, 0.06), 0 1px 0px 0 rgba(0, 0, 0, 0.02);
 }
 .navbar-default .navbar-left {
   padding-left: 10px;
@@ -96,7 +99,7 @@ File: Menu
 }
 .notification-box ul li a {
   font-size: 26px;
-  color: rgba(255, 255, 255, 0.9);
+  color: #435966;
   display: block;
   line-height: 70px;
 }
@@ -184,7 +187,7 @@ File: Menu
   top: 70px;
   width: 250px;
   z-index: 10;
-  background: #ffffff;
+  background: #2f353f;
   bottom: 50px;
   height: 100%;
   margin-bottom: -70px;
@@ -202,7 +205,7 @@ File: Menu
 }
 .content-page .content {
   padding: 0px 5px;
-  margin-top: 73px;
+  margin-top: 93px;
 }
 .button-menu-mobile {
   background: transparent;
@@ -274,7 +277,7 @@ File: Menu
   color: #71b6f9;
 }
 #sidebar-menu ul ul a {
-  color: #63747c;
+  color: #838F9A;
   -webkit-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
   -o-transition: all 0.3s ease-out;
@@ -285,7 +288,7 @@ File: Menu
   padding: 10px 20px 10px 65px;
 }
 #sidebar-menu ul ul a:hover {
-  color: #71b6f9;
+  color: #ffffff;
 }
 #sidebar-menu ul ul a i {
   margin-right: 5px;
@@ -301,7 +304,7 @@ File: Menu
   color: #71b6f9 !important;
 }
 #sidebar-menu > ul > li > a {
-  color: #435966;
+  color: #838F9A;
   display: block;
   padding: 12px 20px;
   margin: 4px 0px;
@@ -356,7 +359,7 @@ File: Menu
   display: none;
 }
 #wrapper.enlarged #sidebar-menu ul ul {
-  border: 2px solid #f4f8fb;
+  border: 2px solid transparent;
   margin-top: -5px;
   padding-top: 5px;
   z-index: 9999;
@@ -365,18 +368,19 @@ File: Menu
 #wrapper.enlarged .left.side-menu {
   width: 70px;
   z-index: 5;
+  position: absolute;
 }
 #wrapper.enlarged .left.side-menu #sidebar-menu > ul > li > a {
   padding: 15px 20px;
 }
 #wrapper.enlarged .left.side-menu #sidebar-menu > ul > li > a:hover {
-  background: #f4f8fb !important;
+  background: #272c35 !important;
 }
 #wrapper.enlarged .left.side-menu #sidebar-menu > ul > li > a:active {
-  background: #f4f8fb !important;
+  background: #272c35 !important;
 }
 #wrapper.enlarged .left.side-menu #sidebar-menu > ul > li > a:focus {
-  background: #f4f8fb !important;
+  background: #272c35 !important;
 }
 #wrapper.enlarged .left.side-menu #sidebar-menu > ul > li > a i {
   margin-right: 20px !important;
@@ -397,18 +401,18 @@ File: Menu
 #wrapper.enlarged .left.side-menu #sidebar-menu ul > li:hover > a {
   position: relative;
   width: 260px;
-  background: #f4f8fb;
+  background: #272c35;
   color: #71b6f9;
-  border-color: #71b6f9;
+  border-color: transparent;
 }
 #wrapper.enlarged .left.side-menu #sidebar-menu ul > li:hover > ul {
   display: block;
   left: 70px;
   position: absolute;
   width: 190px;
+  background: #272c35;
 }
 #wrapper.enlarged .left.side-menu #sidebar-menu ul > li:hover > ul a {
-  background: #ffffff;
   box-shadow: none;
   padding-left: 15px;
   position: relative;
@@ -527,7 +531,7 @@ File: Menu
   text-transform: uppercase;
   font-size: 14px;
   font-weight: 600;
-  color: #435966;
+  color: #435966 !important;
   letter-spacing: 0.03em;
 }
 .right-bar .right-bar-toggle {
@@ -596,7 +600,7 @@ File: Menu
   color: #71b6f9;
   font-style: italic;
 }
-/* Search */
+/* Seach */
 .app-search {
   position: relative;
 }
@@ -611,16 +615,16 @@ File: Menu
 }
 .app-search .form-control,
 .app-search .form-control:focus {
-  border: 1px solid rgba(152, 166, 173, 0.5);
+  border: 1px solid rgba(152, 166, 173, 0.15);
   font-size: 13px;
   height: 34px;
-  color: #cccccc;
+  color: #435966;
   font-weight: 600;
   padding-left: 20px;
   padding-right: 40px;
   margin-top: 18px;
   margin-left: 20px;
-  background: rgba(152, 166, 173, 0.3);
+  background: rgba(152, 166, 173, 0.1);
   box-shadow: none;
   border-radius: 30px;
   width: 190px;
@@ -637,4 +641,7 @@ input.app-search-input::-moz-placeholder {
 }
 input.app-search-input:-ms-input-placeholder {
   color: rgba(255, 255, 255, 0.7);
+}
+.page-title {
+  color: #435966 !important;
 }

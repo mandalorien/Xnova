@@ -31,9 +31,12 @@ File: Responsive
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   body {
     overflow-x: hidden;
+  }
+  .side-menu {
+    position: absolute !important;
   }
   .enlarged {
     .left.side-menu {
@@ -42,6 +45,14 @@ File: Responsive
   }
   .topbar-left {
     width: 70px !important;
+
+    span {
+      display: none !important;
+    }
+    i {
+      display: block !important;
+      line-height: 75px !important;
+    }
   }
   .content-page .content {
     margin-top: 95px;
@@ -54,6 +65,10 @@ File: Responsive
     background-color: @white;
     box-shadow: 0 0px 24px 0 rgba(0, 0, 0, 0.06), 0 1px 0px 0 rgba(0, 0, 0, 0.02);
   }
+
+  .notification-box ul li a,.page-title {
+    color: @dark;
+  }
   .navbar-nav {
     margin: 0px;
     display: inline-block;
@@ -65,43 +80,6 @@ File: Responsive
   }
   .navbar-nav.navbar-right {
     float: right;
-  }
-  .notification-box {
-    display: inline;
-
-    ul {
-      li{
-        a{
-          line-height: 46px;
-        }
-      }
-    }
-
-    .pulse {
-      top: 5px;
-    }
-    .dot {
-      top: -7px;
-      left: -3px;
-    }
-  }
-  #topnav .navbar-toggle {
-    margin-right: 5px;
-  }
-  .navbar-nav {
-    .open {
-      .dropdown-menu {
-        background-color: @white;
-        box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .26);
-        left: auto;
-        position: absolute;
-        right: 0;
-
-        li{
-          display: block;
-        }
-      }
-    }
   }
   .content-page {
     margin-left: 0px !important;
@@ -132,6 +110,61 @@ File: Responsive
 
   div#datatable-buttons_info {
     float: none;
+  }
+
+  .ms-container {
+    width: 100%;
+  }
+
+  .table-responsive {
+    border: 1px solid fade(@light,20%);
+  }
+
+  /* Search */
+  .app-search {
+
+    a {
+      top: 9px;
+      right: 20px;
+      color: fade(@muted, 70%);
+
+      &:hover {
+        color: @muted;
+      }
+    }
+
+    .form-control,
+    .form-control:focus {
+      border: 1px solid fade(@muted, 15%);
+      font-size: 13px;
+      height: 34px;
+      color: @dark;
+      font-weight: 600;
+      padding-left: 20px;
+      padding-right: 40px;
+      margin-top: 18px;
+      margin-left: 20px;
+      background: fade(@muted, 10%);
+      box-shadow: none;
+      border-radius: 30px;
+      width: 190px;
+    }
+  }
+
+  input.app-search-input {
+    &::-webkit-input-placeholder {
+      color: fade(@white, 70%);
+      font-weight: normal;
+    }
+    &:-moz-placeholder {
+      color: fade(@white, 70%);
+    }
+    &::-moz-placeholder {
+      color: fade(@white, 70%);
+    }
+    &:-ms-input-placeholder {
+      color: fade(@white, 70%);
+    }
   }
 }
 
@@ -181,13 +214,27 @@ File: Responsive
   .topbar-left {
     width: 70px !important;
   }
+  .logo {
+    .icon-c-logo {
+      display: inline-block !important;
+      line-height: 58px !important;
+    }
+    span {
+      display: none !important;
+    }
+  }
+  .wrapper-page .logo {
+    span {
+      display: inline-block !important;
+    }
+  }
   .content-page {
     margin-left: 70px;
   }
   .forced {
     .side-menu.left {
       box-shadow: 0 12px 12px rgba(0, 0, 0, 0.1);
-      position: absolute;
+      //position: absolute;
     }
   }
   .enlarged {
@@ -195,14 +242,44 @@ File: Responsive
       box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1) !important;
     }
   }
+  .page-title {
+    font-size: 15px;
+    line-height: 67px;
+    max-width: 250px;
+    white-space: nowrap;
+  }
+  .navbar-default {
+    padding: 0px;
+    .navbar-left {
+      padding-left: 0px !important;
 
+      li {
+        padding: 0px 5px;
+      }
+    }
+  }
+  .topbar-left {
+    display: none;
+  }
+
+  .editable-responsive {
+    overflow-x: auto;
+  }
+  #message #message-nano-wrapper {
+    top: 150px;
+  }
+  #message .header .page-title {
+    color: @muted;
+  }
+  #message .header {
+    border-bottom: none;
+  }
   .profile-info-name img {
     float: none;
     margin: 0px auto;
     margin-bottom: 20px;
   }
   div.hopscotch-bubble .hopscotch-bubble-container {
-    max-width: 180px;
+    max-width:180px;
   }
 }
-

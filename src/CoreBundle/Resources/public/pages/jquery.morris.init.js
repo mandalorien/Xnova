@@ -22,7 +22,8 @@
           pointFillColors: Pfillcolor,
           pointStrokeColors: Pstockcolor,
           behaveLikeLine: true,
-          gridLineColor: '#eef0f2',
+          gridLineColor: '#2f3e47',
+          gridTextColor: '#98a6ad',
           hideHover: 'auto',
           lineWidth: '3px',
           pointSize: 0,
@@ -43,7 +44,8 @@
             labels: labels,
             hideHover: 'auto',
             resize: true,
-            gridLineColor: '#eef0f2',
+            gridLineColor: '#2f3e47',
+            gridTextColor: '#98a6ad',
             lineColors: lineColors
         });
     },
@@ -61,7 +63,8 @@
             pointFillColors: Pfillcolor,
             pointStrokeColors: Pstockcolor,
             resize: true,
-            gridLineColor: '#eef0f2',
+            gridLineColor: '#2f3e47',
+            gridTextColor: '#98a6ad',
             lineColors: lineColors
         });
     },
@@ -75,7 +78,8 @@
             labels: labels,
             hideHover: 'auto',
             resize: true, //defaulted to true
-            gridLineColor: '#eeeeee',
+            gridLineColor: '#2f3e47',
+            gridTextColor: '#98a6ad',
             barSizeRatio: 0.4,
             barColors: lineColors
         });
@@ -91,7 +95,8 @@
             labels: labels,
             hideHover: 'auto',
             resize: true, //defaulted to true
-            gridLineColor: '#eeeeee',
+            gridLineColor: '#2f3e47',
+            gridTextColor: '#98a6ad',
             barColors: lineColors
         });
     },
@@ -101,7 +106,9 @@
             element: element,
             data: data,
             resize: true, //defaulted to true
-            colors: colors
+            colors: colors,
+            backgroundColor: '#2f3e47',
+            labelColor: '#98a6ad'
         });
     },
     MorrisCharts.prototype.init = function() {
