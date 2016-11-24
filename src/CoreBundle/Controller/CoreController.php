@@ -17,6 +17,7 @@ class CoreController extends Controller
      */
     public function indexAction(Request $request)
     {
-		return $this->redirectToRoute('game_homepage');	
+		// il faudra instancier les objets ainsi que créer le profil etc qui concerne le joueur ...
+		return $this->redirectToRoute('overview');	
     }
 }
