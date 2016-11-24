@@ -1,12 +1,11 @@
 
+XNOVA
+=====
 <img align="left" width="0" height="192px" hspace="10"/>
 
 > The [open source](https://en.wikipedia.org/wiki/Open-source_software) mobile [MMO](https://en.wikipedia.org/wiki/Massively_multiplayer_online_game) game.
-
 [![MIT License](https://img.shields.io/badge/license-GPLv3-007EC7.svg?style=flat-square)](/LICENSE) 
 
-XNOVA
-=====
 ###### Projet
 > 4 bundles :
 - CoreBundle (qui contiendra les méthodes importante + le systéme de connexion ).
