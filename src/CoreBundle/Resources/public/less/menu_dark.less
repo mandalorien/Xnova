@@ -2,7 +2,6 @@
 @import "variables.less";
 @import "elements.less";
 
-
 /*
 Template Name: Adminto Dashboard
 Author: CoderThemes
@@ -20,9 +19,10 @@ File: Menu
 
   .topbar-left {
     background: @white;
+    border-top: 3px solid @custom;
     float: left;
     text-align: center;
-    height: 70px;
+    height: 73px;
     position: relative;
     width: 250px;
     z-index: 1;
@@ -34,11 +34,13 @@ File: Menu
 }
 
 .navbar-default {
-  background-color: darken(@dark,15%);
+  background-color: @white;
   border-radius: 0px;
   border: none;
+  border-top: 3px solid @custom;
   margin-bottom: 0px;
   padding: 0px 20px;
+  box-shadow: 0 0px 24px 0 rgba(0, 0, 0, 0.06), 0 1px 0px 0 rgba(0, 0, 0, 0.02);
 
   .navbar-left {
     padding-left: 10px;
@@ -144,7 +146,7 @@ File: Menu
     li {
       a {
         font-size: 26px;
-        color: fade(@white,90%);
+        color: @dark;
         display: block;
         line-height: 70px;
       }
@@ -242,7 +244,7 @@ File: Menu
   top: 70px;
   width: 250px;
   z-index: 10;
-  background: @white;
+  background: #2f353f;
   bottom: 50px;
   height: @height;
   margin-bottom: -70px;
@@ -264,7 +266,7 @@ File: Menu
 
   .content {
     padding: 0px 5px;
-    margin-top: 73px;
+    margin-top: 93px;
   }
 }
 
@@ -345,7 +347,7 @@ File: Menu
         }
       }
       a {
-        color: darken(@muted,20%);
+        color: #838F9A;
         -webkit-transition: all 0.3s ease-out;
         -moz-transition: all 0.3s ease-out;
         -o-transition: all 0.3s ease-out;
@@ -355,7 +357,7 @@ File: Menu
         display: block;
         padding: 10px 20px 10px 65px;
         &:hover {
-          color: @custom;
+          color: @white;
         }
         i {
           margin-right: 5px;
@@ -379,7 +381,7 @@ File: Menu
 
 
 #sidebar-menu > ul > li > a {
-  color: @dark;
+  color: #838F9A;
   display: block;
   padding: 12px 20px;
   margin: 4px 0px;
@@ -458,7 +460,7 @@ File: Menu
   #sidebar-menu {
     ul {
       ul {
-        border: 2px solid #f4f8fb;
+        border: 2px solid transparent;
         margin-top: -5px;
         padding-top: 5px;
         z-index: 9999;
@@ -469,17 +471,18 @@ File: Menu
   .left.side-menu {
     width: 70px;
     z-index: 5;
+    position: absolute;
 
     #sidebar-menu > ul > li > a {
       padding: 15px 20px;
       &:hover {
-        background: @lightdark !important;
+        background: #272c35 !important;
       }
       &:active {
-        background: @lightdark !important;
+        background: #272c35 !important;
       }
       &:focus {
-        background: @lightdark !important;
+        background: #272c35 !important;
       }
 
       i {
@@ -502,17 +505,17 @@ File: Menu
         &:hover > a {
           position: relative;
           width: 260px;
-          background: @lightdark;
+          background: #272c35;
           color: @custom;
-          border-color: @custom;
+          border-color: transparent;
         }
         &:hover > ul {
           display: block;
           left: 70px;
           position: absolute;
           width: 190px;
+          background: #272c35;
           a {
-            background: @white;
             box-shadow: none;
             padding-left: 15px;
             position: relative;
@@ -674,7 +677,7 @@ File: Menu
     text-transform: uppercase;
     font-size: 14px;
     font-weight: 600;
-    color: @dark;
+    color: @dark !important;
     letter-spacing: 0.03em;
   }
   .right-bar-toggle {
@@ -760,7 +763,7 @@ File: Menu
   }
 }
 
-/* Search */
+/* Seach */
 .app-search {
   position: relative;
 
@@ -777,16 +780,16 @@ File: Menu
 
   .form-control,
   .form-control:focus {
-    border: 1px solid fade(@muted, 50%);
+    border: 1px solid fade(@muted, 15%);
     font-size: 13px;
     height: 34px;
-    color: @lightdark-alt;
+    color: @dark;
     font-weight: 600;
     padding-left: 20px;
     padding-right: 40px;
     margin-top: 18px;
     margin-left: 20px;
-    background: fade(@muted, 30%);
+    background: fade(@muted, 10%);
     box-shadow: none;
     border-radius: 30px;
     width: 190px;
@@ -807,6 +810,13 @@ input.app-search-input {
   &:-ms-input-placeholder {
     color: fade(@white, 70%);
   }
+}
+
+
+// Page title
+
+.page-title {
+  color: @dark !important;
 }
 
 

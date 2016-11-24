@@ -74,13 +74,15 @@
 				height : 2
 			},
 			yaxis : {
-				tickColor : '#f5f5f5',
+				tickColor : 'transparent',
+				tickLength: 0,
 				font : {
 					color : '#bdbdbd'
 				}
 			},
 			xaxis : {
-				tickColor : '#f5f5f5',
+				tickColor : '#transparent',
+				tickLength: 0,
 				font : {
 					color : '#bdbdbd'
 				}
@@ -113,7 +115,11 @@
 		var options = {
 			series : {
 				pie : {
-					show : true
+					show : true,
+					stroke: {
+						width: 0,
+						color: '#2f3e47'
+					}
 				}
 			},
 			legend : {
@@ -171,7 +177,7 @@
 				shadowSize : 0, // drawing is faster without shadows
 				lines : {
 					show : true,
-					fill : false,
+					fill : true,
 					lineWidth : 2,
 					steps : false
 				}
@@ -179,7 +185,7 @@
 			grid : {
 				show : true,
 				aboveData : false,
-				color : '#dcdcdc',
+				color : '#36404a',
 				labelMargin : 15,
 				axisMargin : 0,
 				borderWidth : 0,
@@ -201,12 +207,11 @@
 			yaxis : {
 				min : 0,
 				max : 100,
-				tickColor : '#f5f5f5',
-				color : 'rgba(0,0,0,0.1)'
+				tickColor : '#transparent',
+				tickLength: 0
 			},
 			xaxis : {
-				show : false,
-				tickColor : '#f5f5f5'
+				show : false
 			}
 		});
 
@@ -231,7 +236,11 @@
 			series : {
 				pie : {
 					show : true,
-					innerRadius : 0.7
+					innerRadius : 0.7,
+					stroke: {
+						width: 0,
+						color: '#2f3e47'
+					}
 				}
 			},
 			legend : {
@@ -293,11 +302,10 @@
 			grid : {
 				hoverable : true,
 				clickable : true,
-				tickColor : "#f9f9f9",
-				borderWidth : 1,
-				borderColor : "#eeeeee"
+				tickColor : "transparent",
+				borderWidth : 0
 			},
-			colors : ['#ff8acc', '#5b69bc', "#10c469"],
+			colors : ["#3bafda", "#f76397", "#34d3eb"],
 			tooltip : true,
 			tooltipOpts : {
 				defaultTheme : false
@@ -316,6 +324,7 @@
 			},
 			yaxis : {
 				tickColor : '#f5f5f5',
+				tickLength: 0,
 				font : {
 					color : '#bdbdbd'
 				}
@@ -323,6 +332,7 @@
 			xaxis : {
 				ticks: ticks,
 				tickColor : '#f5f5f5',
+				tickLength: 0,
 				font : {
 					color : '#bdbdbd'
 				}
@@ -339,8 +349,8 @@
 		var downloads = [[0, 5], [1, 12], [2, 4], [3, 3], [4, 12], [5, 11], [6, 14],[7, 12], [8, 8], [9, 4], [10, 8]];
 		var plabels = ["Visits", "Page views"];
 		var pcolors = ['#188ae2', '#10c469'];
-		var borderColor = '#f5f5f5';
-		var bgColor = '#fff';
+		var borderColor = 'transparent';
+		var bgColor = 'transparent';
 		this.createPlotGraph("#website-stats", uploads, downloads, plabels, pcolors, borderColor, bgColor);
 
 		//Pie graph data
@@ -445,53 +455,55 @@ $(document).ready(function() {
 				barWidth: 0.2,
 				fill: 1
 			},
-			grid: {
-				show: true,
-				aboveData: false,
-				labelMargin: 5,
-				axisMargin: 0,
-				borderWidth: 1,
-				minBorderMargin: 5,
-				clickable: true,
-				hoverable: true,
-				autoHighlight: false,
-				mouseActiveRadius: 20,
-				borderColor: '#f5f5f5'
+			grid : {
+				show : true,
+				aboveData : false,
+				labelMargin : 5,
+				axisMargin : 0,
+				borderWidth : 0,
+				minBorderMargin : 5,
+				clickable : true,
+				hoverable : true,
+				autoHighlight : false,
+				mouseActiveRadius : 20,
+				borderColor : '#f5f5f5'
 			},
-			series: {
-				stack: stack
+			series : {
+				stack : stack
 			},
-			legend: {
-				position: "ne",
-				margin: [0, -24],
-				noColumns: 0,
-				labelBoxBorderColor: null,
-				labelFormatter: function (label, series) {
+			legend : {
+				position : "ne",
+				margin : [0, -24],
+				noColumns : 0,
+				labelBoxBorderColor : null,
+				labelFormatter : function(label, series) {
 					// just add some space to labes
 					return '' + label + '&nbsp;&nbsp;';
 				},
-				width: 30,
-				height: 2
+				width : 30,
+				height : 2
 			},
-			yaxis: {
-				tickColor: '#f5f5f5',
-				font: {
-					color: '#bdbdbd'
+			yaxis : {
+				tickColor : '#f5f5f5',
+				tickLength: 0,
+				font : {
+					color : '#bdbdbd'
 				}
 			},
-			xaxis: {
-				tickColor: '#f5f5f5',
-				font: {
-					color: '#bdbdbd'
+			xaxis : {
+				tickColor : '#f5f5f5',
+				tickLength: 0,
+				font : {
+					color : '#bdbdbd'
 				}
 			},
 			colors: ['#188ae2', '#10c469', "#ebeff2"],
-			tooltip: true, //activate tooltip
-			tooltipOpts: {
-				content: "%s : %y.0",
-				shifts: {
-					x: -30,
-					y: -50
+			tooltip : true, //activate tooltip
+			tooltipOpts : {
+				content : "%s : %y.0",
+				shifts : {
+					x : -30,
+					y : -50
 				}
 			}
 		};

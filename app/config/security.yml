@@ -1,27 +1,47 @@
-# To get started with security, check out the documentation:
-# http://symfony.com/doc/current/book/security.html
+# app/config/security.yml
+# Installation FosUser: http://symfony.com/doc/current/bundles/FOSUserBundle/index.html
+# tuto FosUser : https://www.idci-consulting.fr/fr/article/fos-user-bundle
 security:
+    encoders:
+        CoreBundle\Entity\Users: sha512
 
-    # http://symfony.com/doc/current/book/security.html#where-do-users-come-from-user-providers
+    role_hierarchy:
+        ROLE_MODERATOR:    ROLE_USER
+        ROLE_OPERATOR:    [ROLE_USER, ROLE_MODERATOR]
+        ROLE_ADMIN:       [ROLE_USER, ROLE_OPERATOR]
+        ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
+
     providers:
-        in_memory:
-            memory: ~
+        main:
+            id: fos_user.user_provider.username
+        fos_userbundle:
+            id: fos_user.user_provider.username
 
     firewalls:
-        # disables authentication for assets and the profiler, adapt it according to your needs
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
-
+        main_login:
+            pattern:    ^/(connexion|enregistrement|validation|reinitialisation|confirmation|login_failure)
+            anonymous: true
         main:
-            anonymous: ~
+            pattern:   ^/
+            anonymous: false
+            provider:  main
             form_login:
                 login_path: login
-                check_path: login
-            # activate different ways to authenticate
+                check_path: login_check
+                failure_path: login_failure
+            logout:
+                path:   fos_user_security_logout
+                target: /
+            remember_me:
+                secret:   '%secret%'
+                lifetime: 604800 # 1 week in seconds
+                path:     /
 
-            # http_basic: ~
-            # http://symfony.com/doc/current/book/security.html#a-configuring-how-your-users-will-authenticate
-
-            # form_login: ~
-            # http://symfony.com/doc/current/cookbook/security/form_login_setup.html
+    access_control:
+        - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/admin/, role: ROLE_MODERATOR }

@@ -9,7 +9,7 @@
 
 
 /*
-Template Name: UBold Dashboard
+Template Name: Adminto Dashboard
 Author: CoderThemes
 Email: coderthemes@gmail.com
 File: Core
@@ -33,20 +33,20 @@ File: Core
 ============= */
 
 body {
-  background: @light5;
+  background: darken(@dark,15%);
   font-family: @font-primary;
   margin: 0;
   padding-bottom: 60px;
   overflow-x: hidden;
-  color: #797979;
+  color: @muted;
 }
 html {
     position: relative;
     min-height: 100%;
-    background: @light5;
+    background: darken(@dark,15%);
 }
 h1, h2, h3, h4, h5, h6 {
-  color: #505458;
+  color: fade(@white,90%);
   font-family: @font-secondary;
   margin: 10px 0;
 }
@@ -106,7 +106,9 @@ a {
     text-decoration: none;
   }
 }
-
+hr {
+    border-top: 1px solid fade(@white,10%);
+}
 .container {
   width: auto;
 }
@@ -153,7 +155,7 @@ a {
 }
 
 .page-header {
-  border-bottom: 1px solid #DBDDDE;
+  border-bottom: 1px solid fade(@white,20%);
 }
 .header-title {
   font-size: 16px;
@@ -162,13 +164,6 @@ a {
   margin-bottom: 8px;
 }
 
-
-.wrapper {
-  padding-top: 130px;
-}
-.container {
-  width: 90%;
-}
 
 
 
@@ -381,7 +376,7 @@ a {
   box-shadow: 0 0px 8px 0 rgba(0,0,0,0.06),0 1px 0px 0 rgba(0,0,0,0.02);
   .border-radius(5px);
   margin-bottom: 20px;
-  background-color: @white;
+  background-color: darken(@dark,10%);
 
   .card-drop {
     color: @muted;
@@ -407,7 +402,7 @@ a {
     cursor: pointer;
     line-height: 45px;
     white-space: nowrap;
-    color: #75798B;
+    color: @muted;
 
     p{
       margin-bottom: 0px;
@@ -424,7 +419,7 @@ a {
   .col-md-4 {
     .border-radius(3px);
     &:hover {
-      background-color: fade(@custom,7%);
+      background-color: fade(@muted,7%);
     }
   }
 }
@@ -507,12 +502,16 @@ a {
   -webkit-transition: all 300ms ease;
   -o-transition: all 300ms ease;
   -ms-transition: all 300ms ease;
+  background-color: @muted;
   box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.06), 0 1px 0px 0 rgba(0, 0, 0, 0.02);
   border: 1px solid fade(@muted,15%);
   & > li {
     & > a {
       padding: 6px 20px;
     }
+  }
+  .divider {
+    background-color: fade(@dark,50%);
   }
 }
 .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {
@@ -523,6 +522,9 @@ a {
   color: @dark;
 }
 
+blockquote .small, blockquote footer, blockquote small {
+  color: fade(@white,80%);
+}
 
 /*Well */
 .well {
@@ -636,30 +638,54 @@ a {
 textarea.form-control {
   min-height: 90px;
 }
+
 .form-control {
-    background-color: #FFFFFF;
-    border: 1px solid #E3E3E3;
-    border-radius: 4px;
-    color: #565656;
-    padding: 7px 12px;
-    height: 38px;
-    max-width: 100%;
-    -webkit-box-shadow: none;
-    box-shadow: none;
-    -webkit-transition: all 300ms linear;
-    -moz-transition: all 300ms linear;
-    -o-transition: all 300ms linear;
-    -ms-transition: all 300ms linear;
-    transition: all 300ms linear;
+  background-color: darken(@dark,5%);
+  border: 2px solid fade(@light, 10%);
+  border-radius: 4px;
+  color: @white;
+  height: 36px;
+  max-width: 100%;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -webkit-transition: all 300ms linear;
+  -moz-transition: all 300ms linear;
+  -o-transition: all 300ms linear;
+  -ms-transition: all 300ms linear;
+  transition: all 300ms linear;
 
   &:focus {
-    background-color: #FFFFFF;
-    border: 1px solid #AAAAAA;
+    background-color: @dark;
+    border: 2px solid fade(@light, 30%);
     -webkit-box-shadow: none;
     box-shadow: none;
     outline: 0 !important;
-    color: #333333;
+    color: @white;
   }
+}
+
+.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+  background-color: fade(@white, 10%);
+}
+
+input.form-control::-webkit-input-placeholder {
+  color: fade(@white,30%);
+  font-weight: normal;
+}
+
+input.form-control:-moz-placeholder {
+  color: fade(@white,30%);
+  font-weight: normal;
+}
+
+input.form-control::-moz-placeholder {
+  color: fade(@white,30%);
+  font-weight: normal;
+}
+
+input.form-control:-ms-input-placeholder {
+  color: fade(@white,30%);
+  font-weight: normal;
 }
 
 .input-lg {
@@ -684,11 +710,11 @@ textarea.form-control {
 }
 
 .form-control-feedback {
-  line-height: 38px !important;
+  line-height: 36px !important;
 }
 .input-group-btn {
   .btn {
-    padding: 8px 12px;
+    padding: 7px 12px;
   }
   .btn-sm {
     padding: 5px 10px;
@@ -698,6 +724,48 @@ textarea.form-control {
   }
 }
 
+.has-success {
+  .form-control {
+    border-color: @success !important;
+    box-shadow: none !important;
+  }
+}
+
+.has-warning {
+  .form-control {
+    border-color: @warning !important;;
+    box-shadow: none !important;
+  }
+}
+
+.has-error {
+  .form-control {
+    border-color: @danger !important;;
+    box-shadow: none !important;
+  }
+}
+
+.input-group-addon {
+  border-radius: 2px;
+  background-color: fade(@white,60%);
+  border: none;
+}
+
+.has-success .checkbox, .has-success .checkbox-inline, .has-success .control-label,
+.has-success .help-block, .has-success .radio, .has-success .radio-inline, .has-success.checkbox label,
+.has-success.checkbox-inline label, .has-success.radio label, .has-success.radio-inline label {
+    color: @success;
+}
+.has-warning .checkbox, .has-warning .checkbox-inline, .has-warning .control-label,
+.has-warning .help-block, .has-warning .radio, .has-warning .radio-inline, .has-warning.checkbox label,
+.has-warning.checkbox-inline label, .has-warning.radio label, .has-warning.radio-inline label {
+    color: @warning;
+}
+.has-error .checkbox, .has-error .checkbox-inline, .has-error .control-label, .has-error
+.help-block, .has-error .radio, .has-error .radio-inline, .has-error.checkbox label,
+.has-error.checkbox-inline label, .has-error.radio label, .has-error.radio-inline label {
+    color: @danger;
+}
 
 /* Labels */
 .label {
@@ -811,14 +879,18 @@ textarea.form-control {
 
 .pagination > li > a,
 .pagination > li > span {
-   color: #636e7b;
+   color: @white;
+  background-color: transparent;
+  border: 2px solid fade(@white,20%);
 }
 
 .pagination > li > a:hover,
 .pagination > li > span:hover,
 .pagination > li > a:focus,
 .pagination > li > span:focus {
-   background-color: #e4e7ea;
+   background-color: fade(@white,20%);
+  border: 2px solid fade(@white,20%);
+  color: @muted;
 }
 
 .pagination-split li {
@@ -832,9 +904,7 @@ textarea.form-control {
 }
 
 .pagination-split li a {
-   -moz-border-radius: 3px;
-   -webkit-border-radius: 3px;
-   border-radius: 3px;
+  .border-radius(3px);
 }
 
 .pagination > .active > a,
@@ -848,40 +918,55 @@ textarea.form-control {
 }
 
 .pager li > a, .pager li > span {
-   -moz-border-radius: 3px;
-   -webkit-border-radius: 3px;
-   border-radius: 3px;
-   color: #636e7b;
+  .border-radius(3px);
+  color: @white;
+  border: 2px solid fade(@white,20%);
+  background: transparent;
+
+  &:hover {
+    background: fade(@white, 20%);
+  }
+}
+
+.pagination>.disabled>a, .pagination>.disabled>a:focus, .pagination>.disabled>a:hover,
+.pagination>.disabled>span, .pagination>.disabled>span:focus,
+.pagination>.disabled>span:hover ,.pager .disabled>a, .pager .disabled>a:focus,
+.pager .disabled>a:hover, .pager .disabled>span{
+  background: fade(@white,20%);
+  color: @white;
+  border: 2px solid fade(@white,10%);
 }
 
 
 /* Tabs */
 .tab-content {
   padding: 20px;
-  border: 2px solid @light;
-  border-top: none;
+  border: 2px solid fade(@light,30%);
 }
 .nav-tabs>.active>a, .nav-tabs>.active>a:focus, .nav-tabs>.active>a:hover {
-  border: 2px solid @light !important;
-  border-bottom-color: @white !important;
+  background-color: fade(@white,30%) !important;
+  color: fade(@white,80%) !important;
+  border: 2px solid fade(@light,30%) !important;
+  border-bottom-color: transparent !important;
 }
 .nav-tabs {
-  border-bottom: 2px solid @light;
+  border-bottom: 2px solid transparent;
 }
-.nav-tabs>li {
-  margin-bottom: -2px;
-}
+
 .nav-tabs {
   a {
-    color: @dark;
+        margin-bottom: -2px;
+    color: fade(@white,70%);
     font-size: 15px;
     font-weight: 600;
+    border: 2px solid transparent !important;
     font-family: @font-secondary;
   }
 }
 .nav>li>a:focus, .nav>li>a:hover {
     text-decoration: none;
-    background-color: @lightdark;
+    background-color: fade(@white,30%) !important;
+  border: 2px solid fade(@light,30%) !important;
 }
 .nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
   border-color: @light;
@@ -890,21 +975,29 @@ textarea.form-control {
 /* List group */
 
 .list-group-item {
-  border: 1px solid @light5;
-  border-left: none;
-  border-right: none;
+  border: 1px solid fade(@light,20%);
+  background: transparent;
+  color: @white !important;
 
   &:hover {
-    background-color: fade(@muted, 10%);
+    background-color: fade(@white,20%) !important;
   }
+}
+.list-group-item.disabled, .list-group-item.disabled:focus, .list-group-item.disabled:hover {
+  background-color: fade(@white,20%) !important;
+}
 
-  &:first-child {
-    border-top: none;
-  }
+.list-group-item.active, .list-group-item.active:hover, .list-group-item.active:focus {
+    background-color: @custom !important;
+    border-color: @custom;
+}
+.list-group-item.disabled .list-group-item-text, .list-group-item.disabled:focus .list-group-item-text,
+.list-group-item.disabled:hover .list-group-item-text {
+  color: fade(@white,50%);
+}
 
-  &:last-child {
-    border-bottom: none;
-  }
+a.list-group-item .list-group-item-heading, button.list-group-item .list-group-item-heading {
+  color: @white;
 }
 .list-no-border {
   .list-group-item {
@@ -954,20 +1047,21 @@ textarea.form-control {
     color: @danger;
 }
 
-/* Modals */
+/* Modal */
 .modal {
   .modal-dialog {
     .modal-content {
       -moz-box-shadow: none;
       -webkit-box-shadow: none;
-      border-color: #DDDDDD;
+      border-color: darken(@dark,10%);
       border-radius: 2px;
       box-shadow: none;
-      padding: 25px;
+      padding: 30px;
+      background-color: @dark;
       .modal-header {
-        border-bottom-width: 2px;
         margin: 0;
         padding: 0;
+        border-bottom: 2px solid fade(@light,30%);
         padding-bottom: 15px;
       }
       .modal-body {
@@ -976,13 +1070,21 @@ textarea.form-control {
       .modal-footer {
         padding: 0;
         padding-top: 15px;
+        border-top: 1px solid fade(@light,30%);
       }
     }
+  }
+  .close {
+    color: @white;
+    text-shadow: none;
   }
 }
 
 .modal-full {
   width: 98%;
+}
+.modal-backdrop {
+    background-color: @light;
 }
 
 .modal-content {
@@ -998,9 +1100,8 @@ textarea.form-control {
 }
 
 /* Custom-modal */
-
 .modal-demo {
-    background-color: #FFF;
+    background-color: @dark;
     width: 600px;
     .border-radius(4px);
     display: none;
@@ -1017,7 +1118,7 @@ textarea.form-control {
     padding: 15px 25px 15px 25px;
     line-height: 22px;
     font-size: 18px;
-    background-color: #36404a;
+    background-color: @custom;
     color: @white;
     text-align: left;
     margin: 0px;
@@ -1032,7 +1133,6 @@ textarea.form-control {
     z-index: 9999;
   }
 }
-
 
 /* Tabs-Accordions */
 
@@ -1058,31 +1158,7 @@ textarea.form-control {
   color: @custom;
 }
 
-.has-success {
-  .form-control {
-    border-color: @success;
-    box-shadow: none !important;
-  }
-}
 
-.has-warning {
-  .form-control {
-    border-color: @warning;
-    box-shadow: none !important;
-  }
-}
-
-.has-error {
-  .form-control {
-    border-color: @danger;
-    box-shadow: none !important;
-  }
-}
-
-.input-group-addon {
-  border-radius: 2px;
-  border: 1px solid @light;
-}
 
 
 /* Tooltips */
@@ -1106,27 +1182,48 @@ textarea.form-control {
   font-family: inherit;
   border: none;
   .border-radius(3px);
+  background-color: @dark;
 
   .popover-title {
-    background-color: transparent;
+    background-color: darken(@dark,5%);
+    border-bottom: none;
     color: @custom;
     font-weight: 600;
   }
 }
 
+.popover.top > .arrow:after {
+  border-top-color: @dark;
+}
+.popover.bottom > .arrow:after {
+  border-bottom-color: @dark;
+}
+.popover.left > .arrow:after {
+  border-left-color: @dark;
+}
+.popover.right > .arrow:after {
+  border-right-color: @dark;
+}
+
 /* Code */
 code {
-    color: @primary;
-    background-color: @lightdark;
-    border-radius: 4px;
+    color: @dark;
+    background-color: fade(@lightdark,60%);
+    border-radius: 3px;
 }
 
 /* Pre */
 pre{
-  background-color: @lightdark;
-  border: 1px solid #D4D8DA
+  background-color: fade(@lightdark,40%);
+  border: 1px solid fade(@lightdark, 50%);
 }
-
+/* Blockquote */
+blockquote {
+    border-left: 4px solid @muted;
+}
+.blockquote-reverse, blockquote.pull-right {
+  border-right: 4px solid @muted;
+}
 /* Carousel */
 
 .carousel-control {
@@ -1346,7 +1443,7 @@ pre{
 ============= */
 
 @media print {
-  .page-title-box,.topbar-left,.hidden-print,.breadcrumb,.page-title,.footer,#topnav,.btn-custom {
+  .page-title-box,.topbar-left,.hidden-print,.breadcrumb,.page-title,.footer {
     display: none;
     margin: 0px;
     padding: 0px;
@@ -1355,7 +1452,7 @@ pre{
   .left,.right-bar {
     display: none;
   }
-  .wrapper {
+  .content {
     margin-top: 0px !important;
     padding-top: 0px;
   }

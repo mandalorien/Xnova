@@ -1,38 +1,23 @@
 <?php
-
 namespace CoreBundle\Controller;
 
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\RouteCollection ;
 use Symfony\Component\HttpFoundation\Request;
 
 class CoreController extends Controller
 {
     /**
-     * @Route("/login", name="login")
-     * @Template("CoreBundle:Core:login.html.twig")
+     * @Template("CoreBundle:Core:index.html.twig")
+     * @Security("is_granted('IS_AUTHENTICATED_FULLY')")
+     * @Route("/", name="index")
      */
-    public function loginAction(Request $request)
+    public function indexAction(Request $request)
     {
-
-    }
-	
-	/**
-     * @Route("/lostpassword", name="lostpassword")
-     * @Template("CoreBundle:Core:lostpassword.html.twig")
-     */
-    public function lostPasswordAction(Request $request)
-    {
-		
-    }
-	
-	/**
-     * @Route("/register", name="register")
-     * @Template("CoreBundle:Core:register.html.twig")
-     */
-    public function registerAction(Request $request)
-    {
-
+		// il faudra instancier les objets ainsi que créer le profil etc qui concerne le joueur ...
+		return $this->redirectToRoute('overview');	
     }
 }

@@ -3,7 +3,6 @@ imports:
     - { resource: security.yml }
     - { resource: services.yml }
     - { resource: "@CoreBundle/Resources/config/services.yml" }
-    - { resource: "@GameBundle/Resources/config/services.yml" }
     - { resource: "@BoardBundle/Resources/config/services.yml" }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
@@ -88,3 +87,8 @@ assetic:
     use_controller: '%kernel.debug%'
     filters:
         cssrewrite: ~
+# app/config/config.yml
+fos_user:
+    db_driver: orm
+    firewall_name: main
+    user_class: CoreBundle\Entity\Users
