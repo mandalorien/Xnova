@@ -5,12 +5,12 @@ plugins_core:
 board:
     resource: "@BoardBundle/Controller/"
     type:     annotation
-    prefix:   /Board/
+    prefix:   /board/
 
 game:
     resource: "@GameBundle/Controller/"
     type:     annotation
-    prefix:   /Game/
+    prefix:   /game/
 
 core:
     resource: "@CoreBundle/Controller/"
