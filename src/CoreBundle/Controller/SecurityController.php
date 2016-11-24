@@ -123,7 +123,7 @@ class SecurityController  extends BaseController
     }
 
     /**
-     * @Template("CoreBundle:Connexion:password.reset.request.html.twig")
+     * @Template("CoreBundle:Core:password.reset.request.html.twig")
      * @Role("is_granted('IS_AUTHENTICATED_ANONYMOUSLY')")
      * @Route("/reinitialisation", name="reset_request")
      */
@@ -142,11 +142,19 @@ class SecurityController  extends BaseController
 
 
     /**
-     * @Template("CoreBundle:Connexion:password.confirm.email.html.twig")
+     * @Template("CoreBundle:Core:password.confirm.email.html.twig")
      * @Role("is_granted('IS_AUTHENTICATED_ANONYMOUSLY')")
      * @return array
      */
     public function confirmEmailAction($email){
         return array('email' => $email);
     }
+	
+    /**
+     * @Template("CoreBundle:Core:logout.html.twig")
+	 * @Route("/logout", name="logout")
+     * @Role("is_granted('IS_AUTHENTICATED_FULLY')")
+     * @return array
+     */	
+	public function logoutAction(){}
 }
