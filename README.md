@@ -17,7 +17,8 @@ XNOVA
 - version 3.1.6
 - si vous clonez la version de Xnova n'oubliez pas d'effectuer la liste des commandes si dessous (MAJ fréquente)
 ```DOS
-- - php composer.phar update
+- - php composer.phar install
+- - php composer.phar update (optionnel)
 - - php bin/console doctrine:database:create
 - - php bin/console doctrine:schema:update --dump-sql
 - - php bin/console doctrine:schema:update --force
