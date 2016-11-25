@@ -26,14 +26,14 @@ class Profil
     /**
      * @var string
      *
-     * @ORM\Column(name="idfacebook", type="string", length=60)
+     * @ORM\Column(name="idfacebook", type="string", length=60, nullable=true)
      */
     private $idfacebook;
 
     /**
      * @var int
      *
-     * @ORM\Column(name="univers", type="integer")
+     * @ORM\Column(name="ipregister", type="string",length=12)
      */
 
     private $ipRegister;
@@ -41,21 +41,21 @@ class Profil
     /**
      * @var string
      *
-     * @ORM\Column(name="avatar", type="text")
+     * @ORM\Column(name="avatar", type="text", nullable=true)
      */
     private $avatar;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="signature", type="text")
+     * @ORM\Column(name="signature", type="text", nullable=true)
      */
     private $signature;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="sexe", type="string", length=1)
+     * @ORM\Column(name="sexe", type="string", length=1, nullable=true)
      */
     private $sexe;
 
@@ -79,21 +79,24 @@ class Profil
      */
     private $users;
 	
+
     /**
-     * @var univers
-     * @ORM\OneToMany(targetEntity="GameBundle\Entity\Univers",mappedBy="profil")
+	 * @var univers
+     * @ORM\ManyToMany(targetEntity="GameBundle\Entity\Univers")
      */
     private $univers;
 	
-	
-    public function __construct()
-    {
-        $this->univers = new ArrayCollection();
-    }
+	public function __construct()
+	{
+		$this->registerDate = new \Datetime();
+		$this->updateDate = new \Datetime();
+		$this->univers = new ArrayCollection();
+	}
+
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
@@ -147,7 +150,6 @@ class Profil
     {
         return $this->ipRegister;
     }
-
 
     /**
      * Set avatar
@@ -296,11 +298,11 @@ class Profil
     /**
      * Add univer
      *
-     * @param Univers $univer
+     * @param \GameBundle\Entity\Univers $univer
      *
      * @return Profil
      */
-    public function addUniver(Univers $univer)
+    public function addUniver(\GameBundle\Entity\Univers $univer)
     {
         $this->univers[] = $univer;
 
@@ -310,9 +312,9 @@ class Profil
     /**
      * Remove univer
      *
-     * @param Univers $univer
+     * @param \GameBundle\Entity\Univers $univer
      */
-    public function removeUniver(Univers $univer)
+    public function removeUniver(\GameBundle\Entity\Univers $univer)
     {
         $this->univers->removeElement($univer);
     }
@@ -320,7 +322,7 @@ class Profil
     /**
      * Get univers
      *
-     * @return Collection
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getUnivers()
     {

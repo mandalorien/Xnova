@@ -18,7 +18,7 @@ class OverviewController extends Controller
      */
     public function indexAction()
     {
-        var_dump("overview");
+
     }
 	
 	/**
@@ -28,6 +28,6 @@ class OverviewController extends Controller
      */
     public function errorAction()
     {
-        var_dump("overview");
+
     }
 }

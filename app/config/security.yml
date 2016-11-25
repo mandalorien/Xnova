@@ -3,7 +3,7 @@
 # tuto FosUser : https://www.idci-consulting.fr/fr/article/fos-user-bundle
 security:
     encoders:
-        CoreBundle\Entity\Users: sha512
+        CoreBundle\Entity\Users: bcrypt
 
     role_hierarchy:
         ROLE_MODERATOR:    ROLE_USER
