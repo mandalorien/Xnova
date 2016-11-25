@@ -48,17 +48,11 @@ class Univers
      * @ORM\Column(name="vitesse_jeu", type="integer")
      */
     private $vitesseJeu;
-	
-    /**
-	 * @var profil
-     * @ORM\ManyToOne(targetEntity="CoreBundle\Entity\Profil",inversedBy="univers")
-     */
-    private $profil;
 
     /**
      * Get id
      *
-     * @return int
+     * @return integer
      */
     public function getId()
     {
@@ -106,7 +100,7 @@ class Univers
     /**
      * Get vitesseProduction
      *
-     * @return int
+     * @return integer
      */
     public function getVitesseProduction()
     {
@@ -130,7 +124,7 @@ class Univers
     /**
      * Get vitesseFlotte
      *
-     * @return int
+     * @return integer
      */
     public function getVitesseFlotte()
     {
@@ -154,34 +148,10 @@ class Univers
     /**
      * Get vitesseJeu
      *
-     * @return int
+     * @return integer
      */
     public function getVitesseJeu()
     {
         return $this->vitesseJeu;
-    }
-
-    /**
-     * Set profil
-     *
-     * @param \CoreBundle\Entity\Profil $profil
-     *
-     * @return Univers
-     */
-    public function setProfil(\CoreBundle\Entity\Profil $profil = null)
-    {
-        $this->profil = $profil;
-
-        return $this;
-    }
-
-    /**
-     * Get profil
-     *
-     * @return \CoreBundle\Entity\Profil
-     */
-    public function getProfil()
-    {
-        return $this->profil;
     }
 }
