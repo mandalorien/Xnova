@@ -32,7 +32,8 @@
         "symfony/assetic-bundle": "^2.8",
         "twig/twig": "1.*",
         "stof/doctrine-extensions-bundle": "^1.2.2",
-        "friendsofsymfony/user-bundle": "~2.0@dev"
+        "friendsofsymfony/user-bundle": "~2.0@dev",
+		"friendsofsymfony/jsrouting-bundle": "2.0.0-alpha1"
 
     },
     "require-dev": {
