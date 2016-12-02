@@ -1,13 +1,13 @@
 {% extends "CoreBundle::layout.html.twig" %}
 {% block title %}
-	Login - {{ parent() }}
+	{{ parent() }} - {% trans %}connexion.sign_in{% endtrans %}
 {% endblock %}
 {% block content %}
         <div class="account-pages"></div>
         <div class="clearfix"></div>
         <div class="wrapper-page">
             <div class="text-center">
-                <a href="index.html" class="logo"><span>Login <span>{% trans %}site.titre{% endtrans %}</span></span></a>
+                <a href="{{ path("login") }}" class="logo"><span>Login <span>{% trans %}site.titre{% endtrans %}</span></span></a>
                 <h5 class="text-muted m-t-0 font-600">{% trans %}site.sous_titre{% endtrans %}</h5>
             </div>
         	<div class="m-t-40 card-box">
@@ -15,15 +15,15 @@
                     <h4 class="text-uppercase font-bold m-b-0">{% trans %}connexion.sign_in{% endtrans %}</h4>
                 </div>
                 <div class="panel-body">
-                    <form class="form-horizontal m-t-20" action="{{ path('login_check') }}" method="POST">
+                    <form id="connexion" class="form-horizontal m-t-20" data-toggle="validator" action="{{ path('login_check') }}" method="POST">
                         <div class="form-group ">
                             <div class="col-xs-12">
-                                <input class="form-control" type="text" name="_username" required="" placeholder="{% trans %}connexion.username{% endtrans %}">
+                                <input class="form-control connexion" type="text" name="_username" required="" placeholder="{% trans %}connexion.username{% endtrans %}">
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-xs-12">
-                                <input class="form-control" type="password" name="_password" required="" placeholder="{% trans %}connexion.password{% endtrans %}">
+                                <input class="form-control connexion" type="password" name="_password" required="" placeholder="{% trans %}connexion.password{% endtrans %}">
                             </div>
                         </div>
 						<div class="form-group ">
@@ -34,29 +34,32 @@
 								</div>
 							</div>
 						</div>
-
-                    <div class="form-group text-center m-t-30">
-                        <div class="col-xs-12">
-                            <button class="btn btn-custom btn-bordred btn-block waves-effect waves-light" type="submit" >{% trans %}connexion.log_in{% endtrans %}</button>
-                        </div>
-                    </div>
-                    <div class="form-group m-t-30 m-b-0">
-                        <div class="col-sm-12">
-                            <a href="{{ path('reset_request') }}" class="text-muted"><i class="fa fa-lock m-r-5"></i>{% trans %}connexion.password_forgotten{% endtrans %}</a>
-                        </div>
-                    </div>
-                    </form>
-
+						<div class="form-group text-center m-t-30">
+							<div class="col-xs-12">
+								<button class="btn btn-custom btn-bordred btn-block waves-effect waves-light" type="submit" id="valider">{% trans %}connexion.log_in{% endtrans %}</button>
+							</div>
+						</div>
+						<div class="form-group m-t-30 m-b-0">
+							<div class="col-sm-12">
+								<a href="{{ path('reset_request') }}" class="text-muted"><i class="fa fa-lock m-r-5"></i>{% trans %}connexion.password_forgotten{% endtrans %}</a>
+							</div>
+						</div>
+					</form>
                 </div>
             </div>
-            <!-- end card-box-->
-
-		<div class="row">
-            <div class="col-sm-12 text-center">
-                <p class="text-muted">{% trans %}connexion.no_account{% endtrans %}<a href="{{ path("register") }}" class="text-primary m-l-5"><b>{% trans %}connexion.create_account{% endtrans %}</b></a></p>
-            </div>
-        </div>
-            
-        </div>
-        <!-- end wrapper page -->
+			<div class="row">
+				<div class="col-sm-12 text-center">
+					<p class="text-muted">{% trans %}connexion.no_account{% endtrans %}<a href="{{ path("register") }}" class="text-primary m-l-5"><b>{% trans %}connexion.create_account{% endtrans %}</b></a></p>
+			</div>
+		</div>
+{% endblock %}
+{% block appendJS %}
+    {% javascripts
+    "@CoreBundle/Resources/public/plugins/jquery-validation/dist/jquery.validate.min.js"
+    "@CoreBundle/Resources/public/plugins/jquery-validation/dist/additional-methods.js"
+    "@CoreBundle/Resources/public/plugins/jquery-validation/src/localization/messages_fr.js"
+    "@CoreBundle/Resources/public/js/login/connexion.validator.js"
+    %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
 {% endblock %}
