@@ -81,7 +81,10 @@ class SecurityController  extends BaseController
 			;
 			$this->get('mailer')->send($message);*/
 
+
             $em->persist($users);
+            $univers = $form->get('univers')->getData();
+            $users->addUniver($univers);
             $em->flush();
 
             # un message de succés ?

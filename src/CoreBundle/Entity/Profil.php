@@ -79,18 +79,10 @@ class Profil
      */
     private $users;
 	
-
-    /**
-	 * @var univers
-     * @ORM\ManyToMany(targetEntity="GameBundle\Entity\Univers")
-     */
-    private $univers;
-	
 	public function __construct()
 	{
 		$this->registerDate = new \Datetime();
 		$this->updateDate = new \Datetime();
-		$this->univers = new ArrayCollection();
 	}
 
     /**
@@ -293,39 +285,5 @@ class Profil
     public function getUsers()
     {
         return $this->users;
-    }
-
-    /**
-     * Add univer
-     *
-     * @param \GameBundle\Entity\Univers $univer
-     *
-     * @return Profil
-     */
-    public function addUniver(\GameBundle\Entity\Univers $univer)
-    {
-        $this->univers[] = $univer;
-
-        return $this;
-    }
-
-    /**
-     * Remove univer
-     *
-     * @param \GameBundle\Entity\Univers $univer
-     */
-    public function removeUniver(\GameBundle\Entity\Univers $univer)
-    {
-        $this->univers->removeElement($univer);
-    }
-
-    /**
-     * Get univers
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getUnivers()
-    {
-        return $this->univers;
     }
 }

@@ -16,6 +16,12 @@
 				</div>
 				<div class="panel-body">
 					{{ form_start(form, {'attr': {'class': 'form-horizontal m-t-20', 'id': 'register','enctype':"multipart/form-data",'data-toggle':"validator",'role':"form"}}) }}
+						<div class="form-group">
+							<div class="col-lg-12 col-md-6 col-sm-12 col-xs-12">
+								{{ form_label(form.univers, null, {'attr':{'class':'required control-label'}}) }}
+								{{ form_widget(form.univers, {'attr':{'class': 'required form-control nom univers'}}) }}
+							</div>
+						</div>
 						<div class="form-group ">
 							<div class="col-xs-12">
 								{{ form_widget(form.email, {'attr': {'class': 'form-control register'} }) }}
