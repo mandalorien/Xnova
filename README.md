@@ -45,7 +45,7 @@ secret (ThisTokenIsNotSoSecretChangeIt): xnova_symfony
 
 ###### Information
 
-- Lors d'une nouvelle fonctionnalité , créez une branche puis indiqué feature_nomdevotrenouvellefonctionnalité
-- Lors d'un fix , créez une branche puis indiqué fix_nomdevotrenouvellefonctionnalité
+- Lors d'une nouvelle fonctionnalité , créez une branche puis indiqué feature_nomdevotrenouvellefonctionnalité ou feature/nomdevotrenouvellefonctionnalité si vous préférez une arborecense en dossier .
+- Lors d'un fix , créez une branche puis indiqué fix_nomdevotrenouvellefonctionnalité ou fix/nomdevotrenouvellefonctionnalité
 
 [utilisation des synthaxe de github ](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
